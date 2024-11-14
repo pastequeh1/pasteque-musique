@@ -14,16 +14,16 @@ const music = new Audio();
 
 const songs = [
     {
-        path: 'assets/1.mp3',
-        displayName: 'The Charmer\'s Call',
+        path: 'assets/Frères de Fumée.mp3',
+        displayName: 'Frères de Fumée',
         cover: 'assets/1.jpg',
-        artist: 'Hanu Dixit',
+        artist: 'L°Insolent',
     },
     {
-        path: 'assets/2.mp3',
-        displayName: 'You Will Never See Me Coming',
-        cover: 'assets/2.jpg',
-        artist: 'NEFFEX',
+        path: 'assets/VALHALLA.mp3',
+        displayName: 'VALHALLA',
+        cover: 'assets/VALHALLA.jpg',
+        artist: 'artel',
     },
     {
         path: 'assets/3.mp3',
