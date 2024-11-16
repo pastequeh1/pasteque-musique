@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
-html{
+html {
     box-sizing: border-box;
 }
 
-body{
+@keyframes rainbow {
+    0%   {background-color: rgb(0, 0, 0);}
+    12%   {background-color: rgb(5, 5, 5);}
+    25%  {background-color: rgb(10, 10, 10);}
+    50%  {background-color: rgb(20, 20, 20);}
+    75%  {background-color: rgb(30, 30, 30);}
+    100% {background-color: rgb(40, 40, 40);}
+  }
+
+body {
     margin: 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Rye', sans-serif;
     font-size: 12px;
     min-height: 100vh;
     display: flex;
@@ -15,7 +23,7 @@ body{
     justify-content: center;
 }
 
-.background{
+.background {
     position: fixed;
     width: 200%;
     height: 200%;
@@ -24,7 +32,7 @@ body{
     z-index: -1;
 }
 
-.background img{
+.background img {
     position: absolute;
     margin: auto;
     top: 0;
@@ -38,63 +46,67 @@ body{
     transform: scale(1.1);
 }
 
-.container{
-    background-color: #e7e7e7;
+.container {
+    position: relative; /* Ajoutez cette ligne */
+    background-color: #000000;
     height: 500px;
     width: 400px;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgb(255, 255, 255);
     transition: all 0.5s ease;
 }
 
-.container:hover{
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+.container:hover {
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.6);
 }
 
-.player-img{
+.player-img {
     width: 300px;
     height: 300px;
-    position: relative;
-    top: -50px;
-    left: 50px;
+    position: relative; /* Pour PC */
+    top: -50px; /* Ajustez si nécessaire */
+    left: 50px; /* Ajustez si nécessaire */
 }
 
-.player-img img{
+.player-img img {
     object-fit: cover;
     border-radius: 20px;
     height: 0;
     width: 0;
     opacity: 0;
     box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
-.player-img:hover img{
+.player-img:hover img {
     box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.8);
 }
 
-.player-img img.active{
+.player-img img.active {
     width: 100%;
     height: 100%;
     transition: all 0.5s;
     opacity: 1;
 }
 
-h2{
+h2 {
     font-size: 25px;
     text-align: center;
     font-weight: 500;
     margin: 10px 0 0;
+    color: #ffffff;
 }
 
-h3{
+h3 {
     font-size: 18px;
     text-align: center;
     font-weight: 500;
     margin: 10px 0 0;
+    color: #ffffff;
 }
 
-.player-progress{
-    background-color: #fff;
+.player-progress {
+    background-color: #ffffff6d;
     border-radius: 5px;
     cursor: pointer;
     margin: 40px 20px 35px;
@@ -102,29 +114,30 @@ h3{
     width: 90%;
 }
 
-.progress{
-    background-color: #212121;
+.progress {
+    background-color: #ffffff;
     border-radius: 5px;
     height: 100%;
     width: 0%;
     transition: width 0.1s linear;
 }
 
-.music-duration{
+.music-duration {
     position: relative;
     top: -25px;
     display: flex;
     justify-content: space-between;
+    color: #ffffff;
 }
 
-.player-controls{
+.player-controls {
     position: relative;
     top: -15px;
     left: 120px;
     width: 200px;
 }
 
-.fa-solid{
+.fa-solid {
     font-size: 30px;
     color: #666;
     margin-right: 30px;
@@ -133,12 +146,36 @@ h3{
     transition: all 0.3s ease;
 }
 
-.fa-solid:hover{
+.fa-solid:hover {
     filter: brightness(40%);
 }
 
-.play-button{
+.play-button {
     font-size: 44px;
     position: relative;
     top: 3px;
+}
+
+/* Media query pour appareils mobiles */
+@media (max-width: 768px) {
+    .container {
+        width: 80%; /* Ajustez la largeur du conteneur pour les mobiles */
+        height: auto; /* Laissez la hauteur s'ajuster automatiquement */
+        animation: rainbow 10s linear infinite alternate; /* Animation de 10 secondes, répétée à l'infini */
+        background-size: 200% 200%;
+    }
+
+    .player-img {
+        width: 40%; /* Ajustez la taille de l'image pour les mobiles */
+        height: auto;
+        top: -15px;
+        left: 85px;
+    }
+
+    .player-controls {
+        position: relative;
+        top: -15px;
+        left: 70px;
+        width: 200px;
+    }
 }
