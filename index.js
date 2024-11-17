@@ -26,7 +26,7 @@ const songs = [
         artist: 'artel',
     },
     {
-        path: 'assets/haut de gamme.mp3',
+        path: 'assets/Haut de gamme.mp3',
         displayName: 'haut de gamme',
         cover: 'assets/hautgamme.jpg',
         artist: 'Joyca,boostee',
