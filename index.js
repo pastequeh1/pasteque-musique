@@ -26,10 +26,28 @@ const songs = [
         artist: 'artel',
     },
     {
-        path: 'assets/3.mp3',
-        displayName: 'Intellect',
-        cover: 'assets/3.jpg',
-        artist: 'Yung Logos',
+        path: 'assets/haut de gamme.mp3',
+        displayName: 'haut de gamme',
+        cover: 'assets/hautgamme.jpg',
+        artist: 'Joyca,boostee',
+    },
+    {
+        path: 'assets/FAIS NOUS VOIR.mp3',
+        displayName: 'Fais nous voir',
+        cover: 'assets/fais nous voir.jpeg',
+        artist: 'Deen burbigo',
+    },
+    {
+        path: 'assets/Doigby - GUERRIER.mp3',
+        displayName: 'Doigby-GUERRIER',
+        cover: 'assets/doigt.jpeg',
+        artist: 'Direkt',
+    },
+    {
+        path: 'assets/Clash Assassins.mp3',
+        displayName: 'Clash Assassins',
+        cover: 'assets/Clash Assassins.jpg',
+        artist: 'joyca,mastu',
     }
 ];
 
