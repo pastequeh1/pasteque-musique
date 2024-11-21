@@ -49,6 +49,18 @@ const songs = [
         cover: 'assets/Clash Assassins.jpg',
         artist: 'joyca,mastu',
     }
+    {
+        path: 'assets/Mauvais Sang.mp3',
+        displayName: 'Mauvais Sang',
+        cover: 'assets/Mauvais Sang.jpg',
+        artist: 'L°Insolent',
+    },
+    {
+        path: 'assets/Cendres et Mensonges.mp3',
+        displayName: 'Cendres et Mensonges',
+        cover: 'assets/Cendres et Mensonges.jpg',
+        artist: 'L°Insolent',
+    }
 ];
 
 let musicIndex = 0;
