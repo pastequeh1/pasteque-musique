@@ -158,24 +158,106 @@ h3 {
 
 /* Media query pour appareils mobiles */
 @media (max-width: 768px) {
+
     .container {
-        width: 80%; /* Ajustez la largeur du conteneur pour les mobiles */
-        height: auto; /* Laissez la hauteur s'ajuster automatiquement */
-        animation: rainbow 10s linear infinite alternate; /* Animation de 10 secondes, répétée à l'infini */
-        background-size: 200% 200%;
+        position: relative; /* Ajoutez cette ligne */
+        background-color: #000000;
+        height: 200px;
+        width: 400px;
+        border-radius: 20px 20px 0 0 ;
+        box-shadow: 0 15px 30px rgb(255, 255, 255);
+        transition: all 0.5s ease;
     }
 
     .player-img {
-        width: 40%; /* Ajustez la taille de l'image pour les mobiles */
-        height: auto;
-        top: -15px;
-        left: 30%;
+        width: 150px;
+        height: 150px;
+        position: relative; /* Pour PC */
+        top: -50px; /* Ajustez si nécessaire */
+        left: 50px; /* Ajustez si nécessaire */
+    }
+
+    .player-img img {
+    width: 125px;
+    height: 125px;
+    position: absolute;
+    top: 70px;
+    left: -45px;
+    background: url("assets/1.jpg");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+    animation: rotate 10s linear 0s infinite forwards;
+    }
+
+    .container .circle{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: 17%;
+        top: 41.5%;
+        background-color: #000000;
+        z-index: 1;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotateZ(0deg);
+        }
+        100% {
+            transform: rotateZ(360deg);
+        }
+    }
+
+    h2 {
+        font-size: 25px;
+        text-align: center;
+        font-weight: 500;
+        margin: 10px 0 0;
+        color: #ffffffa9 ;
+        padding-left: 150px;
+
+        position: absolute; /* Positionnement absolu */
+            top: 10px; /* Distance du haut */
+            left: 5px; /* Distance de la gauche */
+    }
+    
+    h3 {
+        font-size: 15px;
+        text-align: center;
+        font-weight: 500;
+        margin: 10px 0 0;
+        color: #ffffffa9 ;
+        padding-left: 150px;
+
+        position: absolute; /* Positionnement absolu */
+            top: 120px; /* Distance du haut */
+            left: 20px; /* Distance de la gauche */
+    }
+    .block {
+        /*talle est position*/
+        width: 400px;
+        height: 60px;
+        position: absolute;
+        /*position du crade */
+        top: 200px;
+        left: -0px;
+        /*radius*/
+        border-radius: 0 0 20px 20px;
+        /*couleur*/
+        color: #ffffff;
+        background-color: rgb(0, 0, 0);
     }
 
     .player-controls {
-        position: relative;
-        top: -15px;
-        left: 70px;
-        width: 200px;
+        /*play post*/
+        top: -25px;
+        left: 125px;
     }
 }
