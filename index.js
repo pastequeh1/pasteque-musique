@@ -1,3 +1,4 @@
+// Variables globales
 const image = document.getElementById('cover'),
     title = document.getElementById('music-title'),
     artist = document.getElementById('music-artist'),
@@ -8,10 +9,12 @@ const image = document.getElementById('cover'),
     prevBtn = document.getElementById('prev'),
     nextBtn = document.getElementById('next'),
     playBtn = document.getElementById('play'),
-    background = document.getElementById('bg-img');
+    background = document.getElementById('bg-img'),
+    steps = document.querySelectorAll('.volume-step');
 
 const music = new Audio();
 
+// Liste des chansons
 const songs = [
     {
         path: 'assets/Frères de Fumée.mp3',
@@ -78,32 +81,26 @@ const songs = [
 let musicIndex = 0;
 let isPlaying = false;
 
+// Lecture / Pause
 function togglePlay() {
-    if (isPlaying) {
-        pauseMusic();
-    } else {
-        playMusic();
-    }
+    isPlaying ? pauseMusic() : playMusic();
 }
 
 function playMusic() {
     isPlaying = true;
-    // Change play button icon
     playBtn.classList.replace('fa-play', 'fa-pause');
-    // Set button hover title
     playBtn.setAttribute('title', 'Pause');
     music.play();
 }
 
 function pauseMusic() {
     isPlaying = false;
-    // Change pause button icon
     playBtn.classList.replace('fa-pause', 'fa-play');
-    // Set button hover title
     playBtn.setAttribute('title', 'Play');
     music.pause();
 }
 
+// Charger une chanson
 function loadMusic(song) {
     music.src = song.path;
     title.textContent = song.displayName;
@@ -112,12 +109,14 @@ function loadMusic(song) {
     background.src = song.cover;
 }
 
+// Changer de musique
 function changeMusic(direction) {
     musicIndex = (musicIndex + direction + songs.length) % songs.length;
     loadMusic(songs[musicIndex]);
     playMusic();
 }
 
+// Barre de progression
 function updateProgressBar() {
     const { duration, currentTime } = music;
     const progressPercent = (currentTime / duration) * 100;
@@ -128,12 +127,27 @@ function updateProgressBar() {
     currentTimeEl.textContent = `${formatTime(currentTime / 60)}:${formatTime(currentTime % 60)}`;
 }
 
+// Ajuster la barre de progression
 function setProgressBar(e) {
     const width = playerProgress.clientWidth;
     const clickX = e.offsetX;
     music.currentTime = (clickX / width) * music.duration;
 }
 
+// Contrôle du volume
+steps.forEach((step, index) => {
+    step.addEventListener('click', function () {
+        const volume = parseFloat(this.getAttribute('data-volume'));
+        music.volume = volume;
+
+        // Mettre à jour les couleurs
+        steps.forEach((s, i) => {
+            s.style.backgroundColor = i <= index ? '#bebbbb9c' : '#ffffff';
+        });
+    });
+});
+
+// Événements
 playBtn.addEventListener('click', togglePlay);
 prevBtn.addEventListener('click', () => changeMusic(-1));
 nextBtn.addEventListener('click', () => changeMusic(1));
@@ -141,4 +155,5 @@ music.addEventListener('ended', () => changeMusic(1));
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 
+// Charger la première chanson
 loadMusic(songs[musicIndex]);
