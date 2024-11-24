@@ -23,6 +23,29 @@ body {
     justify-content: center;
 }
 
+.volume-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 5px;
+    height: 70px;
+    margin-top: 15px;
+    left: 10px;
+    top: 20px;
+}
+
+.volume-step {
+    width: 20px;
+    background-color: #ffffff; /* Couleur de base */
+    transition: background-color 0.3s;
+    border-radius: 20px;
+    border: 3px solid black;
+}
+
+.volume-step:hover {
+    background-color: #797979; /* Gris clair au survol */
+}
+
 .background {
     position: fixed;
     width: 200%;
@@ -274,18 +297,18 @@ h3 {
         }
     
         .player-img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             position: relative; /* Pour PC */
-            top: -50px; /* Ajustez si nécessaire */
-            left: 50px; /* Ajustez si nécessaire */
+            top: -80px; /* Ajustez si nécessaire */
+            left: 40px; /* Ajustez si nécessaire */
         }
     
         .player-img img {
         width: 125px;
         height: 125px;
         position: absolute;
-        top: 70px;
+        top: 80px;
         left: -45px;
         background: url("assets/1.jpg");
         background-repeat: no-repeat;
@@ -302,8 +325,8 @@ h3 {
             position: absolute;
             width: 30px;
             height: 30px;
-            left: 17%;
-            top: 41.5%;
+            left: 11%;
+            top: 23%;
             background-color: #000000;
             z-index: 1;
             border-radius: 50%;
@@ -328,8 +351,8 @@ h3 {
             padding-left: 150px;
     
             position: absolute; /* Positionnement absolu */
-                top: 10px; /* Distance du haut */
-                left: 5px; /* Distance de la gauche */
+                top: 5px; /* Distance du haut */
+                left: -19px; /* Distance de la gauche */
         }
         
         h3 {
@@ -341,13 +364,13 @@ h3 {
             padding-left: 150px;
     
             position: absolute; /* Positionnement absolu */
-                top: 120px; /* Distance du haut */
-                left: 20px; /* Distance de la gauche */
+                top: 130px; /* Distance du haut */
+                left: -140px; /* Distance de la gauche */
         }
         .block {
             /*talle est position*/
-            width: 360px;
-            height: 60px;
+            width: 362px;
+            height: 50px;
             position: absolute;
             /*position du crade */
             top: 200px;
@@ -361,8 +384,37 @@ h3 {
     
         .player-controls {
             /*play post*/
-            top: -25px;
+            top: 80px;
             left: 100px;
+        }
+
+        .player-progress{
+            position: absolute; /* Placez librement la barre */
+            bottom: -30px; /* Distance du bord bas */
+        }
+
+        .volume-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 5px;
+            height: 60px;
+            margin-top: 20px;
+            position: absolute; /* Place en bas */
+            top: 80px; /* Distance du haut */
+            left: 230px; /* Distance du bord gauche */
+        }
+        
+        .volume-step {
+            width: 14.5px;
+            background-color: #ffffff; /* Couleur de base */
+            transition: background-color 0.3s;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+        
+        .volume-step:hover {
+            background-color: #797979; /* Gris clair au survol */
         }
     }
 }
